@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Recall | Gamified Flashcards</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Dark Mode Study Arena</p>
+          <h1>Neon Recall</h1>
+          <p class="subtitle">Flip cards. Build streaks. Unlock badges.</p>
+        </div>
+        <button id="shuffleBtn" class="ghost-btn">Shuffle Deck</button>
+      </header>
+
+      <section class="hud-grid">
+        <article class="stat-card">
+          <p>XP</p>
+          <strong id="xpValue">0</strong>
+        </article>
+        <article class="stat-card">
+          <p>Level</p>
+          <strong id="levelValue">1</strong>
+        </article>
+        <article class="stat-card">
+          <p>Streak</p>
+          <strong id="streakValue">0</strong>
+        </article>
+        <article class="stat-card">
+          <p>Best</p>
+          <strong id="bestStreakValue">0</strong>
+        </article>
+      </section>
+
+      <section class="progress-wrap" aria-label="Mastery progress">
+        <div class="progress-labels">
+          <span>Mastery Progress</span>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="card-zone">
+        <span id="categoryTag" class="category-tag">Category</span>
+
+        <button
+          id="flipCardBtn"
+          class="flashcard"
+          type="button"
+          aria-label="Flip flashcard"
+        >
+          <div class="card-face card-front">
+            <p class="face-label">Question</p>
+            <h2 id="questionText">Loading card...</h2>
+          </div>
+          <div class="card-face card-back">
+            <p class="face-label">Answer</p>
+            <p id="answerText"></p>
+          </div>
+        </button>
+
+        <p class="flip-hint">Click card or press Space to flip</p>
+      </section>
+
+      <section class="grade-row" aria-label="Review actions">
+        <button data-grade="again" class="grade-btn again" type="button">
+          Again
+        </button>
+        <button data-grade="hard" class="grade-btn hard" type="button">
+          Hard
+        </button>
+        <button data-grade="good" class="grade-btn good" type="button">
+          Good
+        </button>
+        <button data-grade="easy" class="grade-btn easy" type="button">
+          Easy
+        </button>
+      </section>
+
+      <section class="deck-controls">
+        <button id="prevBtn" class="ghost-btn" type="button">Previous</button>
+        <p id="cardCounter" class="counter">1 / 1</p>
+        <button id="nextBtn" class="ghost-btn" type="button">Next</button>
+        <button id="resetBtn" class="ghost-btn warning" type="button">
+          Reset Progress
+        </button>
+      </section>
+
+      <section class="badge-panel">
+        <h3>Unlocked Badges</h3>
+        <ul id="badgeList">
+          <li class="muted">No badges yet. Keep playing!</li>
+        </ul>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
